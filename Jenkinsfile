@@ -6,7 +6,6 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "readlink -f \$(which java) | sed 's:/bin/java::'"
         sh './gradlew clean check --no-daemon'
       }
     }
